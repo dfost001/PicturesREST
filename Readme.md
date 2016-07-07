@@ -27,7 +27,7 @@ Another ExceptionMapper handles application errors such as a PersistenceExceptio
 
 <i>Since the end-points produce XML, the client model and entity beans are coded with Java XML binding annotations.</i>
 
-<b>EJB Methods<b>
+<b>EJB Methods</b>
 EJB methods are invoked to return the data lists or execute the update transaction.
 
 1.	Find customer by id to validate. All endpoints first validate the Customer Id by invoking the EJB find method. The EJB uses an error utility to throw a Client Exception if a NoResultException occurs.
@@ -46,7 +46,7 @@ EJB methods are invoked to return the data lists or execute the update transacti
 
 8.	Adjust Names Transaction – updates the name field given a list of deleted objects For each id the procedure retrieves a list by original name in date ascending order, changes the name according to its index, and merges back into the data.
 
-<b>Endpoints</b>
+<b>Endpoints:</b>
 
 All endpoints return the same response object to simplifly client processing.
 
@@ -69,7 +69,7 @@ A Validator Utility is used to ensure that at least one of the client fields has
 JEE bean validation is used to validate size constraints. If the bean is null, contains all empty fields, or exceeds a length constraint, the Validator throws a Client exception.
 
 The picture is resized according to the size range of the BLOB data type using Java AWT and ImageIO within a resize utility. If no picture has been uploaded, a default picture is assigned. If the picture cannot be resized or an IOException occurs a Client Exception is thrown 
-(The IO exception is thrown as temporary enumeration).
+(The IO exception is thrown as temporary error enumeration).
 
 The picture name is copied to the original name field. The record count, by original file name, plus one is appended, to the original and assigned to the name field. The entity is then persisted using an EJB method. 
 
@@ -77,7 +77,7 @@ The initialize method of the Calculate Utility returns the first n records in de
 
 <b>Delete:</b>
 
-The delete end-point extracts query parameters having the same key into a List of photo 
+The delete end-point extracts query parameters having the same key into a list of photo 
 <span style="font-family:Courier-New"> ids </span>.
 Since the picture names with the same name will be re-numbered after deletion, a list of the records to be deleted is obtained before the deletion. 
 
