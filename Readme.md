@@ -27,7 +27,7 @@ Another ExceptionMapper handles application errors such as a PersistenceExceptio
 
 <i>Since the end-points produce XML, the client model and entity beans are coded with Java XML binding annotations.</i>
 
-<b>EJB Methods</b>
+<b>EJB Methods</b><br/>
 EJB methods are invoked to return the data lists or execute the update transaction.
 
 1.	Find customer by id to validate. All endpoints first validate the Customer Id by invoking the EJB find method. The EJB uses an error utility to throw a Client Exception if a NoResultException occurs.
@@ -78,7 +78,7 @@ The initialize method of the Calculate Utility returns the first n records in de
 <b>Delete:</b>
 
 The delete end-point extracts query parameters having the same key into a list of photo 
-<span style="font-family:Courier-New"> ids </span>.
+<span style="font-family:Courier New"> ids </span>.
 Since the picture names with the same name will be re-numbered after deletion, a list of the records to be deleted is obtained before the deletion. 
 
 The list of photo-ids is passed to the EJB for deletion. If no error is thrown, the held deleted list is passed to the EJB for the update names transaction.
